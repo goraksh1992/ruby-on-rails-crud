@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <%= form_with(model: @article, local: true) do |f| %>
+                    <div class="form-group">
+                        <%= f.label :title %> 
+                        <%= f.text_field :title, :class => 'form-control' %>
+                    </div>
+                
+                    <div class="form-group">
+                        <%= f.label :description %>
+                        <%= f.text_area :description, :class => 'form-control' %>
+                    </div>
+                
+                    <div class="modal-footer">
+                        <%= f.submit :class => 'btn btn-success' %>
+                    </div>
+                    
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <% if @article.errors.any? %>
+            <h4 class="text-danger">Please correct the following errors</h4>
+            <div class="alert alert-danger">
+                <ul>
+                    <% @article.errors.full_messages.each do |error| %>
+                        <li><%= error %></li>
+                    <% end %>
+                <ul>
+            </div>
+        <% end %>
+    </div>
+</div>

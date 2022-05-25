@@ -1,0 +1,33 @@
+ @import "bootstrap";
+
+html,
+body {
+  height: 100%;
+  background-color: #efefef;
+}
+
+ .jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    // background-color: #e9ecef;
+    border-radius: 0.3rem;
+    background-image: url('bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}   
+
+.title{
+    float: right;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #000000;
+    margin-top: 10px;
+}

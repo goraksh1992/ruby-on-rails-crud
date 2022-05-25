@@ -22,15 +22,6 @@
         </div>
     </div>
     <div class="col-md-6">
-        <% if @article.errors.any? %>
-            <h4 class="text-danger">Please correct the following errors</h4>
-            <div class="alert alert-danger">
-                <ul>
-                    <% @article.errors.full_messages.each do |error| %>
-                        <li><%= error %></li>
-                    <% end %>
-                <ul>
-            </div>
-        <% end %>
+        <%= render 'shared/errors' %>
     </div>
 </div>

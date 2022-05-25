@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
             flash[:notice] = "New article updated!"
             redirect_to articles_path
         else
-            render 'new'
+            render 'edit'
         end
     end
 

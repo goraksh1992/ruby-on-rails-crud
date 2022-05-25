@@ -21,6 +21,8 @@ class ArticlesController < ApplicationController
             article_params
         )
 
+        @article.user = User.first
+
         if @article.save
             flash[:notice] = "New article added!"
             redirect_to articles_path

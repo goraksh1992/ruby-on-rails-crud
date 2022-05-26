@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2> Blogger Listing </h2>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Profile</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Blog Count</th>
+                                <th>Join On</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @users.each do |user| %>
+                                <tr>
+                                    <td style="text-align: -webkit-center;">
+                                        <% if user.profile_image.attached? %>
+                                            <%= image_tag user.profile_image, style: 'width: 50px; display: block;' %>
+                                        <% else %>
+                                            <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Circle-icons-profile.svg', style: 'width: 50px; display: block;' %>
+                                        <% end %>
+                                    </td>
+                                    <td>
+                                        <%= user.username %>
+                                    </td>
+                                    <td>
+                                        <%= user.email %>
+                                    </td>
+                                    <td>
+                                        <%= user.articles.count %>
+                                    </td>
+                                    <td>
+                                        <%= user.created_at.to_formatted_s(:short) %>
+                                    </td>
+                                    <td>
+                                        <%= link_to 'Edit', edit_user_path(user), class: "btn btn-warning" %>
+                                    </td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

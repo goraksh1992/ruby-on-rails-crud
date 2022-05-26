@@ -30,7 +30,9 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <small style="float:right;">Created By : <%= article.user.username if article.user %></small>
+                        <% if article.user %>
+                        <small style="float:right;">Created By :  <%= link_to article.user.username.capitalize, user_path(article.user) %></small>
+                        <% end %>
                         <small>Created <%= time_ago_in_words(article.created_at) %> ago</small>
                     </div>
                 </div>

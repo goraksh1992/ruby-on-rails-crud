@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <h2> Profile </h2>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <% if @user.profile_image.attached? %>
+                <%= image_tag @user.profile_image, class: 'rounded shadow mx-auto d-block', style: 'width: 200px; display: block;' %>
+            <% end %>
+        </div>
+        <div class="col-md-8">
+            <div class="container">
+                <h3>Username: <%= @user.username %></h3>
+                <h3>Email: <%= @user.email %></h3>
+            </div>
+            <hr>
+            <div class="col-sm-5 col-xs-6 badge bg-primary">Date Of Joining: <%= @user.created_at.to_formatted_s(:short)%></div>
+        </div>
+    </div>
+</div>

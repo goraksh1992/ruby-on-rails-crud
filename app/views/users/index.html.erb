@@ -40,7 +40,7 @@
                                         <%= user.created_at.to_formatted_s(:short) %>
                                     </td>
                                     <td>
-                                        <%= link_to 'Edit', edit_user_path(user), class: "btn btn-warning" %>
+                                        <%= link_to 'Edit', edit_user_path(user),    class: "btn btn-warning" %>
                                     </td>
                                 </tr>
                             <% end %>
@@ -49,5 +49,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="flickr_pagination mt-2">
+        <%= will_paginate @articles, :container => false %>
     </div>
 </div>

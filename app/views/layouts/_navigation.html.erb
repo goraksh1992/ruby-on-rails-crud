@@ -15,14 +15,17 @@
       <li class="nav-item">
         <%= link_to 'BLOGGERS', users_path, :class => 'nav-link active' %>
       </li>
-      <li class="nav-item">
-        <%= link_to 'LOGIN', login_path, :class => 'nav-link active' %>
-      </li>
-      <li class="nav-item">
-        <%= button_to 'LOGOUT', logout_path, class: 'nav-link active bg-dark', method: :delete,
-          style: "border: none;"
-        %>
-      </li>
+      <% if logged_in? %>
+        <li class="nav-item">
+          <%= button_to 'LOGOUT', logout_path, class: 'nav-link active bg-dark', method: :delete,
+            style: "border: none;"
+          %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'LOGIN', login_path, :class => 'nav-link active' %>
+        </li>
+      <% end %>
     </ul>
     <form class="d-flex" role="search">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

@@ -21,6 +21,12 @@
                         <div class="modal-footer">
                             <%= f.submit "Log In", :class => 'btn btn-success' %>
                         </div>
+
+                        <hr>
+
+                        <p style="float: right;">
+                           Does not have account <%= link_to 'Create Account', signup_path, class: "text-info", style: "text-decoration: none;" %>
+                        </p>
                         
                     <% end %>
                 </div>

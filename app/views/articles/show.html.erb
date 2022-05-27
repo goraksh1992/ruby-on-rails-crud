@@ -10,11 +10,13 @@
                     </p>
                     <small style="float:right;">Created By : <%= @article.user.username if @article.user %></small>
                 </div>
-                <div class="modal-footer" style="float: right;">
-                    <%= link_to 'Edit', edit_article_path(@article), :class=>'btn btn-warning'  %>
-                    <%= link_to "Delete", article_path(@article), class: "btn btn-danger", 
-                    method: :delete, data: {confirm: "Are you sure?"} %>
-                </div>
+                <% if logged_in? && @article.user == current_user %>
+                    <div class="modal-footer" style="float: right;">
+                        <%= link_to 'Edit', edit_article_path(@article), :class=>'btn btn-warning'  %>
+                        <%= link_to "Delete", article_path(@article), class: "btn btn-danger", 
+                        method: :delete, data: {confirm: "Are you sure?"} %>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>

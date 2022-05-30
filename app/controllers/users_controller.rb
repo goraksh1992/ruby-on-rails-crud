@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     before_action :get_user, only: [:show, :edit, :update, :destroy]
     # This is for login required validation
-    before_action :require_user, except: [:index, :show, :new]
+    before_action :require_user, except: [:index, :show, :new, :create]
     # Only user update and delete the article which he added
     before_action :require_same_user, only: [:edit, :update, :destory]
 

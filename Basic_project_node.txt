@@ -1,0 +1,41 @@
+------------------------ Upload File Setup --------------------------------------------
+
+1. Set up Active Storage
+>> rails active_storage:install
+
+2. Do migrate 
+>> rails db:migrate
+
+3. Update model
+# Add this in model class and replace image name with your field name
+has_one_attached :image
+
+4. Add this is html form
+<%= f.file_field :image, accept: 'image/png, image/gif, image/jpeg' %>
+
+Optional
+
+Add this in Gemfile to validate your image 
+5. gem 'active_storage_validations'
+
+----------------------------------- End Here ----------------------------------------------
+
+------------------------------------- Pagination ------------------------------------------
+
+https://github.com/mislav/will_paginate
+
+
+1. Update gemfile with following code 
+gem 'will_paginate' '~> 3.1.0' (Check the latest version)
+
+2. Run command 
+>> bundle install
+
+3. check below link to more setings for Pagination
+https://github.com/mislav/will_paginate
+
+
+--------------------------------------------- End Here --------------------------------------
+
+Check toggle in query
+>> user.toggle!(:admin)

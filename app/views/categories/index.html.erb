@@ -36,8 +36,9 @@
                                     </td>
                                     <td>
                                         <%= link_to 'Show', category_path(category), class: "btn btn-success" %>
-                                        <% if logged_in? %>
+                                        <% if logged_in? && current_user.admin? %>
                                             <%= link_to 'Edit', edit_category_path(category), class: "btn btn-warning" %>
+                                            <%= button_to 'Delete', category_path(category), class: "btn btn-danger", method: :delete %>
                                         <% end %>
                                     </td>
                                 </tr>

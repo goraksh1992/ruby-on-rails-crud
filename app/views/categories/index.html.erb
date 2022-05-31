@@ -21,6 +21,7 @@
                         <thead>
                             <tr>
                                 <th>Category Name</th>
+                                <th>Total Articles</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -29,6 +30,10 @@
                                 <tr>
                                     <td>
                                         <%= category.name %>
+                                    </td>
+                                    <td>
+                                        <%= category.articles.count %>
+                                    </td>
                                     <td>
                                         <%= link_to 'Show', category_path(category), class: "btn btn-success" %>
                                         <% if logged_in? %>

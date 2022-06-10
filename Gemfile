@@ -42,7 +42,7 @@ gem "bcrypt", "~> 3.1.7"
 gem 'tzinfo'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data"
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -55,6 +55,15 @@ gem 'will_paginate', '~> 3.3'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
+
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-passenger'
+gem 'capistrano-rbenv'
+
+# Required at deployment time
+gem 'ed25519', '~> 1.2'
+gem 'bcrypt_pbkdf', '~> 1.0'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
